@@ -17,7 +17,7 @@ namespace Example1
         public string oper;
         public double save;
         public double memNum;
-        public int cnt;
+        
 
         public Form1()
         {
@@ -94,7 +94,19 @@ namespace Example1
             {
                 resultOperation = Math.Sqrt(double.Parse(this.windowView.Text));
             }
-            cnt++;
+            else if (oper == "sin(x)")
+            {
+                resultOperation = Math.Sin(double.Parse(this.windowView.Text) * Math.PI / 180);
+            }
+            else if (oper == "cos(x)")
+            {
+                resultOperation = Math.Cos(double.Parse(this.windowView.Text) * Math.PI / 180);
+            }
+            else if (oper == "ln")
+            {
+                resultOperation = Math.Log(double.Parse(this.windowView.Text));
+            }
+            
             save = resultOperation;
             this.windowView.Text = resultOperation.ToString();
             prov = true;
